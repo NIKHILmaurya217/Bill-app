@@ -39,10 +39,10 @@ class Home(MDApp):
 	def change(self):
 		self.source.get_screen("result_scr").ids.resPname.text = f"Product name:{self.productName}"
 		self.source.get_screen("result_scr").ids.resPqunatity.text = f"Product quantity: {self.productQuantity}"
-		self.source.get_screen("result_scr").ids.resCost.text = f"Total amount: {int(self.productCost)*int(self.productQuantity)}"
+		self.source.get_screen("result_scr").ids.resCost.text = f"Total amount: {int(self.productCost)*float(self.productQuantity)}"
 		self.source.get_screen("result_scr").ids.resDiscount.text = f"Discount: {self.productDiscount}%"
 		self.source.get_screen("result_scr").ids.resTotal.text = f"Total amount to pay: {self.a}"
-		with open("bill.txt","a+") as f:
+		with open("bill.txt","a+",encoding="utf-8") as f:
 			f.write(f"""\nDate: {date.today()}\n
 			--------☆ ☆ ☆ ☆ ☆ ☆ ☆------------\n
 			Namaste user! Thankyou for shopping..\n
